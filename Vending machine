@@ -1,0 +1,65 @@
+class Product:                        # main ckass which will handle name code price
+    def __init__(self, name, code, price):
+        self.name = name
+        self.code = code
+        self.price = price
+        
+class VendingMachine:                         # vending machine class
+    def __init__(self):
+        self.name = "Yum Zone Vending Machine"        # vending machine name
+
+        self.products = [                                       #Products of the vm 
+            Product("Maltese chocolate","111", 4.75),
+            Product("Bounty Chocolate","112", 3.90),
+            Product("Bueno chocolate","113", 4.75),
+            Product("Mountain Dew","#114", 4),
+            Product("Galaxy Flutes Chocolate", "115", 4.75),
+            Product("Snickers chocolate","116", 3.90),
+            Product("Doritos","117", 3.50),
+            Product("Oreo","118", 2.95),
+            Product("Galaxy Bar","119", 5.50),
+            Product("Water","120", 1.50),
+            Product("KitKat","101", 3.50),
+            Product("Halley Biscuit","102", 3.50),
+            Product("Apple Juice ","103", 3.50),
+            Product("Ice Tea","104", 5.50),
+            Product("Chocolate Milk","105", 2.50),
+            Product("Sabahoo cake","106", 3.50)
+        ]
+
+    def show_products(self):                                   #vm menu price name and code
+        print("Welcome to Meed Vending Machine!")
+        print("Code  Name                    Price")
+        print("----------------------------------------")
+
+        for p in self.products:                            #using for loop for user when user select the item
+            code = p.code + " " * (6 - len(p.code))
+            name = p.name + " " * (25 - len(p.name))
+            price = str(p.price)
+            print(code + name + price)
+
+    def buy(self):                                        # user buy.
+        code = input("Enter product code: ")         #ask the user to enter product code in the vm.
+
+        for p in self.products:
+            if p.code == code:
+                print("You selected: " + p.name)
+                print("Price: " + str(p.price) + " SAR")
+
+                money = float(input("Insert money: "))      # ask the user to insert the money.
+                                     
+                if money < p.price:                            # Price checking high or low.
+                    print("Not enough money. Product not dispensed.")
+                    return
+
+                change = money - p.price                          # return the change.
+                print("Dispensing " + p.name + "...")
+                print("Change returned: " + str(change) + " SAR")
+                print("Thank you for using meed Vending Maching!")
+                return
+
+        print("Invalid code.")                                              # invalid if the user select u,navaliable item
+
+machine = VendingMachine()                                                     # Starting the Vending Maching.
+machine.show_products()
+machine.buy()
