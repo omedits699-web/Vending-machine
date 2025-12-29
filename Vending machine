@@ -12,7 +12,7 @@ class VendingMachine:                         # vending machine class
             Product("Maltese chocolate","111", 4.75),
             Product("Bounty Chocolate","112", 3.90),
             Product("Bueno chocolate","113", 4.75),
-            Product("Mountain Dew","#114", 4),
+            Product("Mountain Dew","114", 4),
             Product("Galaxy Flutes Chocolate", "115", 4.75),
             Product("Snickers chocolate","116", 3.90),
             Product("Doritos","117", 3.50),
