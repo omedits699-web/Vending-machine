@@ -28,7 +28,7 @@ class VendingMachine:                         # vending machine class
         ]
 
     def show_products(self):                                   #vm menu price name and code
-        print("Welcome to Meed Vending Machine!")
+        print("Welcome to Yum Zone Vending Machine!")
         print("Code  Name                    Price")
         print("----------------------------------------")
 
