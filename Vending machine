@@ -55,7 +55,7 @@ class VendingMachine:                         # vending machine class
                 change = money - p.price                          # return the change.
                 print("Dispensing " + p.name + "...")
                 print("Change returned: " + str(change) + " SAR")
-                print("Thank you for using meed Vending Maching!")
+                print("Thank you for using Yum Zone Vending Maching!")
                 return
 
         print("Invalid code.")                                              # invalid if the user select u,navaliable item
